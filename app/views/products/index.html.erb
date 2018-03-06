@@ -1,0 +1,24 @@
+
+
+	<h1>Productos</h1> <br>
+	<div class="row">
+		
+	<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-md-3">
+      <div class="card text-center" style="margin-top: 30px;">
+        <%= image_tag product.photo, class: 'card-img-top' %>
+        <div class="card-body">
+          <h6 class="card-title"><%= product.name %></h5>
+          <p class="card-text">$<%= product.price %></p>
+
+          <%= link_to product_orders_path(product), class: "btn btn-success", method: :post do %>
+            <i class="fas fa-cart-plus"></i>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+	
